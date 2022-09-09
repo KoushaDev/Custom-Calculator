@@ -1,0 +1,365 @@
+*{
+font-family: 'Poppins', sans-serif;
+}
+
+
+/***---GLOBAL PROPERTIES---***/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(25, 25, 25);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/***---CONTAINER PROPERTIES---***/
+
+#calculator {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(25, 25, 25);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 4% 3%;
+  position: relative;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#screenContainer {
+  position: relative;
+  left: -20px;
+  width: 100%;
+  height: 22%;
+  /*  for testing purposes only */
+}
+
+#screen {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  background-color: inherit;
+  color: #fff;
+}
+
+.fontLrg {
+    font-size: 3.35em;
+  }
+
+.fontMed {
+  font-size: 2.05em;
+}
+
+.fontSm {
+  font-size: 1.45em;
+}
+
+.row {
+  width: 100%;
+  height: 15.6%;
+  display: flex;
+  align-items: center;
+}
+
+
+/***---BUTTON PROPERTIES---***/
+
+.click {
+  height: 91%;
+  width: 22%;
+  margin: auto;
+  font-size: 1.75em;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  background-color: rgb(136, 136, 136);
+  border: none;
+  transition: transform 0.175s ease-in-out;
+}
+
+.click:focus {
+  outline: 0;
+}
+
+.click:hover {
+  transform: scale(1.04);
+}
+
+.click:active {
+  transition-duration: 0.1s;
+  transform: scale(0.95);
+}
+
+.operator {
+  background-color: #ff3c00;
+}
+
+#clear {
+  width: 72%;
+  font-size: 1.75em;
+  letter-spacing: 0.08em;
+}
+
+#equals {
+  width: 47%;
+}
+
+
+/***---MEDIA QUERIES---***/
+
+/*---Portrait Screens---*/
+
+/*Small screens 400px - 600px wide & up to 850px high*/
+@media screen and (min-width: 400px) and (max-width: 600px)
+    and (max-height: 850px) {
+
+/*  for testing purposes only */
+
+  .fontLrg {
+    font-size: 4.2em;
+  }
+
+  .fontMed {
+    font-size: 2.6em;
+  }
+
+  .fontSm {
+    font-size: 1.9em;
+  }
+      
+  .click,
+  #clear {
+    font-size: 2em;
+  }
+}
+
+
+/*Medium screens 601px+ wide & 851px+ high*/
+@media screen and (min-width: 601px) and (min-height: 851px) {
+
+/*  for testing purposes only */
+
+  .fontLrg {
+    font-size: 8em;
+  }
+
+  .fontMed {
+    font-size: 5em;
+  }
+
+  .fontSm {
+    font-size: 3.5em;
+  }
+
+  .click {
+    width: 22%;
+    height: 89%;
+    margin: auto;
+    font-size: 3.5em;
+  }
+
+  #clear {
+    width: 72%;
+    font-size: 3.5em;
+  }
+
+  #equals {
+    width: 47%;
+  }
+}
+
+
+/*Large screens 1000px+ wide & 851px+ high*/
+@media screen and (min-width: 1000px) and (min-height: 851px) {
+
+  #calculator {
+    padding: 2% 3%;
+  }
+
+  #screenContainer {
+    height: 25%;
+/*    for testing purposes only */
+  }
+
+  .row {
+    height: 15%;
+  }
+
+  .fontLrg {
+    font-size: 10em;
+  }
+
+  .fontMed {
+    font-size: 6.25em;
+  }
+
+  .fontSm {
+    font-size: 4.75em;
+  }
+
+  .click {
+    width: 23%;
+    height: 85%;
+    margin: auto;
+    font-size: 4em;
+  }
+
+  #clear {
+    width: 73%;
+    font-size: 3.5em;
+  }
+
+  #equals {
+    width: 48%;
+  }
+}
+
+
+
+
+/*---Landscape Screens---*/
+
+/*Small screens up to 850px wide & up to 450px high*/
+@media screen and (max-width: 850px) and (max-height: 450px) {
+
+  #calculator {
+    padding: 2% 5%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #screenContainer {
+    height: 25%;
+/*    for testing purposes only */
+  }
+
+  .row {
+    height: 15%;
+  }
+
+  .fontLrg {
+    font-size: 4.5em;
+  }
+
+  .fontMed {
+    font-size: 2.9em;
+  }
+
+  .fontSm {
+    font-size: 2.1em;
+  }
+
+  .click {
+    font-size: 2em;
+    width: 23%;
+    height: 80%;
+    margin: auto;
+  }
+
+  #clear {
+    width: 73%;
+    font-size: 2em;
+  }
+
+  #equals {
+    width: 48%;
+  }
+}
+
+
+/*Medium Screens 851px+ wide & 451px+ high & orientation is landscape
+(so that medium/large portrait screen queries do not get overridden)*/
+@media screen and (min-width: 851px) and (min-height: 451px) and (orientation: landscape) {
+
+  #calculator {
+    padding: 2% 3%;
+  }
+
+  #screenContainer {
+    height: 25%;
+/*    for testing purposes only */
+  }
+
+  .row {
+    height: 15%;
+  }
+
+  .fontLrg {
+    font-size: 6.75em;
+  }
+
+  .fontMed {
+    font-size: 5.5em;
+  }
+
+  .fontSm {
+    font-size: 3.9em;
+  }
+
+  .click {
+    width: 23%;
+    height: 85%;
+    margin: auto;
+    font-size: 3.25em;
+  }
+
+  #clear {
+    width: 73%;
+    font-size: 2.75em;
+  }
+
+  #equals {
+    width: 48%;
+  }
+}
+
+
+/*Large Screens 1400px+ wide & 451px+ high*/
+@media screen and (min-width: 1400px) and (min-height: 451px) {
+
+  #container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/*  for testing purposes only */
+
+  .fontLrg {
+    font-size: 10.5em;
+  }
+
+  .fontMed {
+    font-size: 8.25em;
+  }
+
+  .fontSm {
+    font-size: 5.85em;
+  }
+
+  .click {
+    font-size: 3.25em;
+  }
+
+  #clear {
+    font-size: 2.75em;
+  }
+}
+  
